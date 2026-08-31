@@ -1,0 +1,8 @@
+yfinance
+pandas
+tabulate
+colorama
+flask
+flask-cors
+scikit-learn
+joblib

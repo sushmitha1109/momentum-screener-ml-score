@@ -1,0 +1,144 @@
+  ⚠ Report route disabled: No module named 'data_analyst'
+
+════════════════════════════════════════════════════════════════
+  MOMENTUM SCREENER — API SERVER
+════════════════════════════════════════════════════════════════
+
+  Auth:    API key required (Bearer token)
+  Origins: *
+
+  Routes:
+  GET  http://localhost:5000/health                        (public)
+  GET  http://localhost:5000/api/quote?ticker=FLEX         (auth)
+  GET  http://localhost:5000/api/regime                    (auth)
+  GET  http://localhost:5000/api/scan?preset=watchlist     (auth)
+  GET  http://0.0.0.0:5000/api/magic?market=both&top=5   (auth)
+  GET  http://0.0.0.0:5000/api/magic?market=us&top=5     (auth)
+  GET  http://0.0.0.0:5000/api/magic?market=sg&top=5     (auth)
+  GET  http://0.0.0.0:5000/api/daily?market=both&top=5   (auth)
+  GET  http://0.0.0.0:5000/api/research?ticker=FLEX       (auth)
+  GET  http://0.0.0.0:5000/api/research/quota           (auth)
+  GET  http://0.0.0.0:5000/api/analyst?ticker=AAPL&risk=moderate&period=short-term   (auth)
+  GET  http://0.0.0.0:5000/api/signal?ticker=AAPL&risk=moderate   (auth)  [FAST]
+  GET  http://0.0.0.0:5000/api/analyst/models                 (auth)
+  GET  http://0.0.0.0:5000/api/paper/status                  (auth)
+  GET  http://0.0.0.0:5000/api/paper/positions               (auth)
+  PST  http://0.0.0.0:5000/api/paper/trade                   (auth)
+  GET  http://0.0.0.0:5000/api/paper/performance              (auth)
+  GET  http://0.0.0.0:5000/api/sentiment?top=5                (auth)
+
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'momentum_screener'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.27.185.50:5000
+Press CTRL+C to quit
+127.0.0.1 - - [31/Aug/2026 15:52:14] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 15:52:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 15:52:15] "GET /api/paper/status HTTP/1.1" 200 -
+  15:52:15  ·  [SPY] Fetching...127.0.0.1 - - [31/Aug/2026 15:52:15] "GET /api/paper/performance HTTP/1.1" 200 -
+
+127.0.0.1 - - [31/Aug/2026 15:52:15] "GET /api/paper/positions HTTP/1.1" 500 -
+  15:52:15  15:52:15  ·  [AMD] Fetching...
+  ·  [FLEX] Fetching...
+  15:52:15  ·    [JBL] Fetching...15:52:15
+    ·  [COCO] Fetching...
+15:52:15  ·  [MPC] Fetching...
+  15:52:16  ✓  [SPY] OK  $771.10  +0.66%  64 bars  vol 36.3M
+  15:52:16  ·  [QQQ] Fetching...
+  15:52:16  ✓  [JBL] OK  $312.22  +0.42%  64 bars  vol 1.0M
+  15:52:16  ✓  [FLEX] OK  $115.30  +3.11%  64 bars  vol 2.1M
+  15:52:16  ✓  [AMD] OK  $476.67  -0.89%  64 bars  vol 15.4M
+  15:52:16  ✓  [COCO] OK  $61.63  -1.86%  64 bars  vol 0.6M
+  15:52:16  ✓  [MPC] OK  $363.54  +0.35%  64 bars  vol 1.9M
+  15:52:17  ✓  [QQQ] OK  $721.11  +1.37%  64 bars  vol 34.1M
+  15:52:17  ·  [^VIX] Fetching...
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:17  /home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+✗  [FLEX] Score 30/100 | NEUTRAL | ADX 12 | RSI 43 | RVOL 0.6x | MACD BEAR
+  /home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+15:52:17  127.0.0.1 - - [31/Aug/2026 15:52:17] "GET /api/quote?ticker=FLEX HTTP/1.1" 200 -
+  /home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+15:52:1715:52:17      15:52:17  ⚠✓  ✗⚠  [AMD] Score 35/100 | NEUTRAL | ADX 5 | RSI 48 | RVOL 0.7x | MACD BEAR
+  [JBL] Score 50/100 | NEUTRAL | ADX 37 | RSI 38 | RVOL 1.1x | MACD BEAR  [COCO] Score 45/100 | BB SQUEEZE | ADX 20 | RSI 48 | RVOL 0.7x | MACD BEAR  [MPC] Score 70/100 | MOMENTUM CONT. | ADX 69 | RSI 84 | RVOL 0.8x | MACD BULL127.0.0.1 - - [31/Aug/2026 15:52:17] "GET /api/quote?ticker=AMD HTTP/1.1" 200 -
+
+127.0.0.1 - - [31/Aug/2026 15:52:17] "GET /api/quote?ticker=COCO HTTP/1.1" 200 -
+
+
+127.0.0.1 - - [31/Aug/2026 15:52:17] "GET /api/quote?ticker=JBL HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 15:52:17] "GET /api/quote?ticker=MPC HTTP/1.1" 200 -
+  15:52:18  ✓  [^VIX] OK  $15.24  +5.03%  62 bars  vol 0.0M
+127.0.0.1 - - [31/Aug/2026 15:52:18] "GET /api/regime HTTP/1.1" 200 -
+  15:52:32  ·  [NVDA] Fetching...
+  15:52:32  ·  [AMD] Fetching...  
+15:52:32  ·  [FLEX] Fetching...
+    15:52:32  ·15:52:32  [PLTR] Fetching...
+    15:52:32  ·  [SMCI] Fetching...·
+  [JBL] Fetching...
+  15:52:33  ✓  [JBL] OK  $312.22  +0.42%  64 bars  vol 1.0M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:33  ⚠  [JBL] Score 50/100 | NEUTRAL | ADX 37 | RSI 38 | RVOL 1.1x | MACD BEAR
+127.0.0.1 - - [31/Aug/2026 15:52:33] "GET /api/quote?ticker=JBL HTTP/1.1" 200 -
+  15:52:33  ✓  [AMD] OK  $476.67  -0.89%  64 bars  vol 15.4M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:33  ✗  [AMD] Score 35/100 | NEUTRAL | ADX 5 | RSI 48 | RVOL 0.7x | MACD BEAR
+127.0.0.1 - - [31/Aug/2026 15:52:33] "GET /api/quote?ticker=AMD HTTP/1.1" 200 -
+  15:52:33  ✓  [FLEX] OK  $115.30  +3.11%  64 bars  vol 2.1M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:33  ✗  [FLEX] Score 30/100 | NEUTRAL | ADX 12 | RSI 43 | RVOL 0.6x | MACD BEAR
+127.0.0.1 - - [31/Aug/2026 15:52:33] "GET /api/quote?ticker=FLEX HTTP/1.1" 200 -
+  15:52:33  ✓  [SMCI] OK  $38.46  +2.86%  64 bars  vol 29.1M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:33  ✓  [SMCI] Score 70/100 | MOMENTUM CONT. | ADX 47 | RSI 68 | RVOL 0.5x | MACD BULL
+127.0.0.1 - - [31/Aug/2026 15:52:33] "GET /api/quote?ticker=SMCI HTTP/1.1" 200 -
+  15:52:33  ✓  [NVDA] OK  $227.98  +8.74%  64 bars  vol 194.8M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:33  ✓  [NVDA] Score 75/100 | BREAKOUT | ADX 1 | RSI 54 | RVOL 1.6x | MACD BULL
+127.0.0.1 - - [31/Aug/2026 15:52:33] "GET /api/quote?ticker=NVDA HTTP/1.1" 200 -
+  15:52:34  ✓  [PLTR] OK  $185.93  +4.75%  64 bars  vol 25.0M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:34  ✓  [PLTR] Score 70/100 | MOMENTUM CONT. | ADX 42 | RSI 63 | RVOL 0.5x | MACD BULL
+127.0.0.1 - - [31/Aug/2026 15:52:34] "GET /api/quote?ticker=PLTR HTTP/1.1" 200 -
+  15:52:47  ·  [FLEX] Fetching...    15:52:4715:52:47  ·
+    15:52:47  15:52:47·  [AMD] Fetching...  ·  ·  [JBL] Fetching...  [COCO] Fetching...
+
+
+  [MPC] Fetching...
+  15:52:48  ✓  [FLEX] OK  $115.30  +3.11%  64 bars  vol 2.1M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:48  ✗  [FLEX] Score 30/100 | NEUTRAL | ADX 12 | RSI 43 | RVOL 0.6x | MACD BEAR
+127.0.0.1 - - [31/Aug/2026 15:52:48] "GET /api/quote?ticker=FLEX HTTP/1.1" 200 -
+  15:52:48  ✓  [MPC] OK  $363.54  +0.35%  64 bars  vol 1.9M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:48  ✓  [MPC] Score 70/100 | MOMENTUM CONT. | ADX 69 | RSI 84 | RVOL 0.8x | MACD BULL
+127.0.0.1 - - [31/Aug/2026 15:52:48] "GET /api/quote?ticker=MPC HTTP/1.1" 200 -
+  15:52:48  ✓  [COCO] OK  $61.63  -1.86%  64 bars  vol 0.6M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:48  ⚠  [COCO] Score 45/100 | BB SQUEEZE | ADX 20 | RSI 48 | RVOL 0.7x | MACD BEAR
+127.0.0.1 - - [31/Aug/2026 15:52:48] "GET /api/quote?ticker=COCO HTTP/1.1" 200 -
+  15:52:48  ✓  [JBL] OK  $312.22  +0.42%  64 bars  vol 1.0M
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:48  ⚠  [JBL] Score 50/100 | NEUTRAL | ADX 37 | RSI 38 | RVOL 1.1x | MACD BEAR  15:52:48  ✓  [AMD] OK  $476.67  -0.89%  64 bars  vol 15.4M
+127.0.0.1 - - [31/Aug/2026 15:52:48] "GET /api/quote?ticker=JBL HTTP/1.1" 200 -
+
+/home/raghu/github/momentum_screener/.venv/lib/python3.14/site-packages/sklearn/utils/validation.py:2827: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+  warnings.warn(
+  15:52:48  ✗  [AMD] Score 35/100 | NEUTRAL | ADX 5 | RSI 48 | RVOL 0.7x | MACD BEAR
+127.0.0.1 - - [31/Aug/2026 15:52:48] "GET /api/quote?ticker=AMD HTTP/1.1" 200 -
